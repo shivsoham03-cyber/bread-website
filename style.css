@@ -1,0 +1,164 @@
+/* Custom CSS for Sourdough Scroll Animation - Scroll Only Mode */
+
+:root {
+  --color-bg: #0e0d0c;
+  --color-text-secondary: #afaba7;
+  --color-accent: #d4af37;
+  --color-accent-rgb: 212, 175, 55;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--color-bg);
+  color: #fff;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  background-color: var(--color-bg);
+}
+
+.scroll-spacer {
+  height: 400vh; /* Scrub height for the scroll animation */
+  pointer-events: none;
+}
+
+/* --- Grain Overlay (Tactile Texture) --- */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* --- Preloader Screen --- */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s cubic-bezier(0.76, 0, 0.24, 1), visibility 0.8s;
+}
+
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 320px;
+  width: 100%;
+}
+
+.loader-icon {
+  width: 80px;
+  height: 80px;
+  color: var(--color-accent);
+  margin-bottom: 24px;
+}
+
+.bread-svg {
+  width: 100%;
+  height: 100%;
+  animation: svgPulse 2s infinite ease-in-out;
+}
+
+.score-line {
+  stroke-dashoffset: 10;
+  animation: strokeAnim 3s infinite linear;
+}
+
+.loader-subtitle {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.1em;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+}
+
+.loader-bar-container {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.loader-bar {
+  width: 0%;
+  height: 100%;
+  background-color: var(--color-accent);
+  transition: width 0.2s ease-out;
+  box-shadow: 0 0 10px rgba(var(--color-accent-rgb), 0.5);
+}
+
+.loader-percentage {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+/* --- Sticky Canvas Container --- */
+.canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+#animation-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Animations --- */
+@keyframes svgPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+}
+
+@keyframes strokeAnim {
+  0% {
+    stroke-dashoffset: 20;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>The Health Factory - Whole Wheat Bread | Scroll Experience</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Tailwind Configuration from code.html -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-container": "#4f2200",
+            "on-secondary-fixed": "#1b1c1c",
+            "tertiary-fixed": "#e2e2e2",
+            "surface-bright": "#f9f9f9",
+            "on-secondary": "#ffffff",
+            "surface-tint": "#994700",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "background": "#f9f9f9",
+            "surface-container-highest": "#e2e2e2",
+            "secondary-container": "#e4e2e1",
+            "on-secondary-container": "#656464",
+            "surface": "#f9f9f9",
+            "on-surface": "#1a1c1c",
+            "secondary": "#5f5e5e",
+            "on-tertiary-container": "#2d2f2f",
+            "on-background": "#1a1c1c",
+            "on-error": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary": "#5d5f5f",
+            "primary-fixed": "#ffdbc8",
+            "inverse-primary": "#ffb68b",
+            "surface-dim": "#dadada",
+            "secondary-fixed-dim": "#c8c6c6",
+            "on-surface-variant": "#564337",
+            "error-container": "#ffdad6",
+            "surface-variant": "#e2e2e2",
+            "surface-container-high": "#e8e8e8",
+            "inverse-on-surface": "#f0f1f1",
+            "primary": "#994700",
+            "secondary-fixed": "#e4e2e1",
+            "on-tertiary-fixed": "#1a1c1c",
+            "inverse-surface": "#2f3131",
+            "error": "#ba1a1a",
+            "on-primary-fixed-variant": "#743400",
+            "on-tertiary-fixed-variant": "#454747",
+            "on-primary": "#ffffff",
+            "outline-variant": "#ddc1b2",
+            "surface-container-low": "#f3f3f4",
+            "surface-container": "#eeeeee",
+            "on-secondary-fixed-variant": "#474747",
+            "tertiary-fixed-dim": "#c6c6c7",
+            "primary-fixed-dim": "#ffb68b",
+            "primary-container": "#e87722",
+            "tertiary-container": "#959696",
+            "outline": "#8a7265",
+            "on-primary-fixed": "#321300"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-mobile": "20px",
+            "container-max": "1280px",
+            "margin-desktop": "64px",
+            "stack-md": "40px",
+            "stack-lg": "80px",
+            "unit": "8px",
+            "gutter": "24px"
+          },
+          "fontFamily": {
+            "display-lg": ["Montserrat"],
+            "headline-lg": ["Montserrat"],
+            "label-caps": ["Inter"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-md": ["Montserrat"],
+            "headline-lg-mobile": ["Montserrat"]
+          },
+          "fontSize": {
+            "display-lg": [
+              "64px",
+              {
+                "lineHeight": "1.1",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "headline-lg": [
+              "40px",
+              {
+                "lineHeight": "1.2",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "700"
+              }
+            ],
+            "label-caps": [
+              "12px",
+              {
+                "lineHeight": "1",
+                "letterSpacing": "0.1em",
+                "fontWeight": "700"
+              }
+            ],
+            "body-md": [
+              "16px",
+              {
+                "lineHeight": "1.5",
+                "fontWeight": "400"
+              }
+            ],
+            "body-lg": [
+              "18px",
+              {
+                "lineHeight": "1.6",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-md": [
+              "24px",
+              {
+                "lineHeight": "1.3",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg-mobile": [
+              "32px",
+              {
+                "lineHeight": "1.2",
+                "fontWeight": "700"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+
+  <!-- External Fonts & Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Montserrat:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-white">
+  <!-- TopNavBar -->
+  <nav class="bg-surface docked full-width top-0 fixed z-50 transition-all duration-300 shadow-sm w-full">
+    <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto h-[80px]">
+      <div class="flex-shrink-0">
+        <a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight" href="#">The Health Factory</a>
+      </div>
+      <div class="hidden md:flex flex-grow justify-center items-center space-x-8">
+        <a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-all duration-200" href="#">Products</a>
+        <a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">About Us</a>
+        <a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Nutrition</a>
+      </div>
+      <div class="hidden md:flex flex-shrink-0 items-center space-x-6">
+        <div class="relative group cursor-pointer">
+          <span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors duration-200" data-icon="search">search</span>
+        </div>
+        <button class="bg-primary-container text-white font-label-caps text-label-caps uppercase px-6 py-3 rounded-DEFAULT hover:opacity-90 transition-opacity duration-200 font-bold tracking-wider">
+          Shop Now
+        </button>
+      </div>
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button class="text-on-surface-variant hover:text-primary transition-colors">
+          <span class="material-symbols-outlined" data-icon="menu">menu</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Preloader Screen -->
+  <div id="preloader">
+    <div class="loader-content">
+      <div class="loader-icon">
+        <svg viewBox="0 0 100 100" class="bread-svg">
+          <path d="M 20 60 C 20 35, 35 25, 50 25 C 65 25, 80 35, 80 60 C 80 70, 75 75, 50 75 C 25 75, 20 70, 20 60 Z" fill="none" stroke="currentColor" stroke-width="3" />
+          <path d="M 35 40 Q 45 45 42 60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="2 2" class="score-line" />
+          <path d="M 50 35 Q 60 42 55 60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="2 2" class="score-line" />
+          <path d="M 65 40 Q 75 48 68 62" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="2 2" class="score-line" />
+        </svg>
+      </div>
+      <p class="loader-subtitle">Loading frames...</p>
+      <div class="loader-bar-container">
+        <div class="loader-bar" id="loader-bar"></div>
+      </div>
+      <div class="loader-percentage" id="loader-percentage">0%</div>
+    </div>
+  </div>
+
+  <!-- Noise Overlay for texture -->
+  <div class="grain-overlay"></div>
+
+  <!-- Sticky Canvas Container (Scroll animation plays in background) -->
+  <div class="canvas-container">
+    <canvas id="animation-canvas"></canvas>
+  </div>
+
+  <!-- Hero Overlay Text (Fades out at 30% scroll) -->
+  <div id="hero-overlay" class="fixed inset-0 flex flex-col justify-center items-center text-center z-20 pointer-events-none transition-opacity duration-150 pt-[80px]">
+    <div class="px-6 max-w-6xl">
+      <h1 class="font-display-lg text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-[#4f2200] mb-4 drop-shadow-lg mix-blend-multiply opacity-95">
+        The Health Factory
+      </h1>
+      <p class="font-display-lg text-2xl md:text-4xl text-[#b45309] font-bold tracking-widest uppercase drop-shadow-md mix-blend-multiply opacity-90">
+        Bread Badlo Adat Nahi
+      </p>
+    </div>
+  </div>
+
+  <!-- Scroll Spacer: gives the user room to scroll and scrub the bread animation -->
+  <div class="scroll-spacer"></div>
+
+  <!-- The Health Factory Content Portions (Slides on top of the animation canvas) -->
+  <div class="relative z-10 w-full shadow-2xl">
+    
+    <!-- SECTION 2: THE TRUTH GRID -->
+    <section class="py-stack-lg bg-surface relative z-20 border-t border-surface-variant/50">
+      <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="text-center mb-16">
+          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold">Radical Transparency</h2>
+          <p class="font-body-md text-body-md text-secondary mt-4 max-w-2xl mx-auto">We stripped away the decorative clutter and chemical additives to focus purely on ingredient integrity.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+          <!-- Feature 1 -->
+          <div class="bg-white p-8 rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:-translate-y-1 transition-transform duration-300 flex flex-col items-start border border-transparent hover:border-surface-variant">
+            <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mb-6 text-primary-container">
+              <span class="material-symbols-outlined text-[24px]" data-icon="water_drop">water_drop</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-on-surface mb-2 text-[20px]">No Palm Oil</h3>
+            <p class="font-body-md text-body-md text-secondary leading-relaxed">Formulated with healthier fat alternatives to protect your heart and the environment.</p>
+          </div>
+          
+          <!-- Feature 2 -->
+          <div class="bg-white p-8 rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:-translate-y-1 transition-transform duration-300 flex flex-col items-start border border-transparent hover:border-surface-variant">
+            <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mb-6 text-primary-container">
+              <span class="material-symbols-outlined text-[24px]" data-icon="science">science</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-on-surface mb-2 text-[20px]">No Preservatives</h3>
+            <p class="font-body-md text-body-md text-secondary leading-relaxed">Baked fresh daily without harsh chemical shelf-life extenders. Just real food.</p>
+          </div>
+          
+          <!-- Feature 3 -->
+          <div class="bg-white p-8 rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:-translate-y-1 transition-transform duration-300 flex flex-col items-start border border-transparent hover:border-surface-variant">
+            <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mb-6 text-primary-container">
+              <span class="material-symbols-outlined text-[24px]" data-icon="monitor_weight">monitor_weight</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-on-surface mb-2 text-[20px]">Low Sugar &amp; Fat</h3>
+            <p class="font-body-md text-body-md text-secondary leading-relaxed">Optimized macros for high-performance lifestyles. Fuel your day without the crash.</p>
+          </div>
+          
+          <!-- Feature 4 -->
+          <div class="bg-white p-8 rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:-translate-y-1 transition-transform duration-300 flex flex-col items-start border border-transparent hover:border-surface-variant">
+            <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mb-6 text-primary-container">
+              <span class="material-symbols-outlined text-[24px]" data-icon="grain">grain</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-on-surface mb-2 text-[20px]">Zero Maida</h3>
+            <p class="font-body-md text-body-md text-secondary leading-relaxed">100% whole wheat flour ensures maximum fiber retention and slow-release energy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: THE COMPONENT BREAKDOWN -->
+    <section class="py-stack-lg bg-white relative">
+      <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-md items-center">
+          <!-- Image Side -->
+          <div class="relative h-[400px] md:h-[600px] w-full bg-surface-container-low rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.04)]">
+            <img alt="Macro close-up photography of perfectly toasted The Health Factory whole wheat bread slice, highlighting the textured crumb, golden-brown crust, and scattered seeds under warm, inviting lighting." class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbT7kMrEXKho2r8_xhXlgZU6H9De2n2FXBoFcv3-u48Wk3EW71RBLP_E_7N3_mRbbtInw4_PmHUewllKF6Rz_G5VffZMAXA_Bz6x5ItFOxK3fgo2MM1QZZsrySjfcz56g550e8rpdgAeO1nljSPaP_bLdhS16Ycbp65luA5UXoHKlmHtxHY1D5TzxKdxb7NHsJH2bETPNz7SL8i421IHYdsBWb-ZQ4gub1srMKK7QP4OG1QQrLO-ex"/>
+            <!-- Floating Badge -->
+            <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-white/50 max-w-[200px]">
+              <span class="font-label-caps text-label-caps text-primary block mb-1">CLINICAL PRECISION</span>
+              <span class="font-headline-md text-[16px] text-on-surface font-bold">100% Whole Wheat Texture</span>
+            </div>
+          </div>
+          
+          <!-- Content Side -->
+          <div class="flex flex-col justify-center pl-0 lg:pl-12">
+            <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold mb-6">The Anatomy of Better Bread</h2>
+            <p class="font-body-md text-body-md text-secondary mb-10">See exactly how we stack up against standard commercial alternatives. We believe in showing our work.</p>
+            
+            <div class="space-y-6">
+              <!-- Comparison Item 1 -->
+              <div class="flex items-center justify-between border-b border-surface-variant pb-4">
+                <div class="flex flex-col w-5/12">
+                  <span class="font-label-caps text-label-caps text-secondary mb-1 uppercase tracking-wider">Standard Bread</span>
+                  <span class="font-body-md text-secondary line-through opacity-70">Refined Flour (Maida)</span>
+                </div>
+                <div class="w-2/12 flex justify-center">
+                  <span class="material-symbols-outlined text-surface-variant">arrow_forward</span>
+                </div>
+                <div class="flex flex-col w-5/12 pl-4 border-l-2 border-primary-container">
+                  <span class="font-label-caps text-label-caps text-primary-container mb-1 uppercase tracking-wider">The Health Factory</span>
+                  <span class="font-body-md font-bold text-on-surface flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[18px] text-[#22c55e]">check_circle</span>
+                    100% Whole Wheat
+                  </span>
+                </div>
+              </div>
+              
+              <!-- Comparison Item 2 -->
+              <div class="flex items-center justify-between border-b border-surface-variant pb-4">
+                <div class="flex flex-col w-5/12">
+                  <span class="font-body-md text-secondary line-through opacity-70">Palm Oil Blends</span>
+                </div>
+                <div class="w-2/12 flex justify-center">
+                  <span class="material-symbols-outlined text-surface-variant">arrow_forward</span>
+                </div>
+                <div class="flex flex-col w-5/12 pl-4 border-l-2 border-primary-container">
+                  <span class="font-body-md font-bold text-on-surface flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[18px] text-[#22c55e]">check_circle</span>
+                    Zero Palm Oil
+                  </span>
+                </div>
+              </div>
+              
+              <!-- Comparison Item 3 -->
+              <div class="flex items-center justify-between border-b border-surface-variant pb-4">
+                <div class="flex flex-col w-5/12">
+                  <span class="font-body-md text-secondary line-through opacity-70">Chemical Preservatives</span>
+                </div>
+                <div class="w-2/12 flex justify-center">
+                  <span class="material-symbols-outlined text-surface-variant">arrow_forward</span>
+                </div>
+                <div class="flex flex-col w-5/12 pl-4 border-l-2 border-primary-container">
+                  <span class="font-body-md font-bold text-on-surface flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[18px] text-[#22c55e]">check_circle</span>
+                    Clean Label Preservatives
+                  </span>
+                </div>
+              </div>
+              
+              <!-- Comparison Item 4 -->
+              <div class="flex items-center justify-between pb-4">
+                <div class="flex flex-col w-5/12">
+                  <span class="font-body-md text-secondary line-through opacity-70">High Added Sugar</span>
+                </div>
+                <div class="w-2/12 flex justify-center">
+                  <span class="material-symbols-outlined text-surface-variant">arrow_forward</span>
+                </div>
+                <div class="flex flex-col w-5/12 pl-4 border-l-2 border-primary-container">
+                  <span class="font-body-md font-bold text-on-surface flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[18px] text-[#22c55e]">check_circle</span>
+                    Low Sugar Profile
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-10">
+              <a class="inline-flex items-center text-on-surface font-label-caps text-label-caps uppercase font-bold tracking-wider hover:text-primary-container transition-colors group" href="#">
+                Read the Full Clinical Breakdown
+                <span class="material-symbols-outlined ml-2 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+              <div class="h-[2px] w-0 bg-primary-container mt-1 transition-all duration-300 group-hover:w-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full border-t border-surface-variant/30">
+      <div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-stack-md max-w-container-max mx-auto">
+        <div class="mb-8 md:mb-0">
+          <a class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight" href="#">The Health Factory</a>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8 mb-8 md:mb-0">
+          <a class="font-label-caps text-label-caps text-on-secondary-container hover:underline hover:text-primary transition-all uppercase tracking-wider" href="#">Privacy Policy</a>
+          <a class="font-label-caps text-label-caps text-on-secondary-container hover:underline hover:text-primary transition-all uppercase tracking-wider" href="#">Terms of Service</a>
+          <a class="font-label-caps text-label-caps text-on-secondary-container hover:underline hover:text-primary transition-all uppercase tracking-wider" href="#">Contact</a>
+          <a class="font-label-caps text-label-caps text-on-secondary-container hover:underline hover:text-primary transition-all uppercase tracking-wider" href="#">Shipping</a>
+        </div>
+        <div class="text-center md:text-right">
+          <p class="font-body-md text-body-md text-on-surface-variant">© 2024 The Health Factory. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    
+  </div>
+
+  <!-- Scroll script -->
+  <script src="main.js"></script>
+</body>
+</html>
